@@ -24,7 +24,7 @@ export default function RootLayout({
         </div>
         <footer className="w-full py-6 flex justify-center items-center shrink-0 z-50">
           <a
-            href="https://github.com/leeo/commitlol"
+            href="https://github.com/leotrimhaliti/Kommits"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"

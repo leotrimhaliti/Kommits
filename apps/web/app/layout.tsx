@@ -7,7 +7,7 @@ import { Github } from "lucide-react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kommit.me",
+  title: "Kommits.me",
   description: "Commit messages for people who ship.",
 };
 

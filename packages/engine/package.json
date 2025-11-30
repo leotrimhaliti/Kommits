@@ -1,0 +1,17 @@
+{
+    "name": "@commitlol/engine",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc -w"
+    },
+    "devDependencies": {
+        "@types/seedrandom": "^3.0.8",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "seedrandom": "^3.0.5"
+    }
+}

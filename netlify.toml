@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && npm run build --workspace=@commitlol/engine && npm run build --workspace=web"
+  command = "npm install && npm run build --workspace=@kommits/engine && npm run build --workspace=web"
   publish = "apps/web/.next"
 
 [[plugins]]

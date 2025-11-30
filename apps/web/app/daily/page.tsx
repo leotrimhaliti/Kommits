@@ -37,34 +37,34 @@ export default function DailyPage() {
     };
 
     return (
-        <main className="flex flex-1 flex-col items-center justify-center p-4">
-            <div className="z-10 w-full max-w-3xl items-center justify-between font-mono text-sm flex flex-col">
-                <div className="w-full flex justify-start mb-8">
+        <main className="flex flex-1 flex-col items-center justify-center px-4 py-4 md:py-8">
+            <div className="z-10 w-full max-w-2xl flex flex-col items-center">
+                <div className="w-full flex justify-start mb-4 md:mb-6">
                     <Link href="/">
-                        <Button variant="ghost">
-                            <ArrowLeft className="mr-2 h-4 w-4" /> Back
+                        <Button variant="ghost" size="sm">
+                            <ArrowLeft className="mr-1.5 h-4 w-4" /> Back
                         </Button>
                     </Link>
                 </div>
 
-                <h1 className="text-4xl font-bold mb-2 tracking-tighter text-center">
+                <h1 className="text-2xl md:text-4xl font-bold mb-1 tracking-tighter text-center">
                     Daily Commit
                 </h1>
-                <p className="text-muted-foreground mb-8">The same message for everyone, everywhere.</p>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 text-center">The same message for everyone, everywhere.</p>
 
                 <Card
-                    className="w-full p-12 flex flex-col items-center justify-center min-h-[200px] cursor-pointer hover:shadow-lg transition-all"
+                    className="w-full p-6 md:p-10 flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px] cursor-pointer hover:shadow-lg active:scale-[0.98] transition-all"
                     onClick={copyToClipboard}
                 >
-                    <p className="text-3xl md:text-5xl font-black text-center leading-tight tracking-tight">
+                    <p className="text-xl sm:text-2xl md:text-4xl font-black text-center leading-tight tracking-tight">
                         {message}
                     </p>
-                    <p className="mt-8 text-muted-foreground text-sm">Click to copy</p>
+                    <p className="mt-4 md:mt-6 text-muted-foreground text-xs md:text-sm">Tap to copy</p>
                 </Card>
 
-                <div className="mt-12 text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Next Daily Commit in:</p>
-                    <p className="text-2xl font-mono font-bold">{timeLeft}</p>
+                <div className="mt-6 md:mt-10 text-center">
+                    <p className="text-xs md:text-sm text-muted-foreground mb-1">Next Daily Commit in:</p>
+                    <p className="text-lg md:text-2xl font-mono font-bold">{timeLeft}</p>
                 </div>
             </div>
         </main>

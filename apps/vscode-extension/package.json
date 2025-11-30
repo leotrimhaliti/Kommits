@@ -1,0 +1,69 @@
+{
+    "name": "kommits",
+    "displayName": "Kommits",
+    "description": "AI-powered commit message suggestions with personality",
+    "version": "0.0.1",
+    "publisher": "kommits",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:git-commit"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "kommits.generateMessage",
+                "title": "Kommits: Generate Commit Message"
+            },
+            {
+                "command": "kommits.setVibe",
+                "title": "Kommits: Set Vibe"
+            },
+            {
+                "command": "kommits.dailyCommit",
+                "title": "Kommits: Insert Daily Commit"
+            }
+        ],
+        "configuration": {
+            "title": "Kommits",
+            "properties": {
+                "kommits.defaultVibe": {
+                    "type": "string",
+                    "default": "professional",
+                    "enum": [
+                        "professional",
+                        "passive-aggressive",
+                        "hype",
+                        "chaos",
+                        "daily"
+                    ],
+                    "description": "Default vibe for commit message suggestions"
+                },
+                "kommits.autoSuggest": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically show suggestions when typing commit messages"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/vscode": "^1.85.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@kommits/engine": "^0.0.1"
+    }
+}

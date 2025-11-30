@@ -1,7 +1,6 @@
 [build]
-  base = "apps/web"
-  command = "npm run build"
-  publish = ".next"
+  command = "npm install && npm run build --workspace=@commitlol/engine && npm run build --workspace=web"
+  publish = "apps/web/.next"
 
 [[redirects]]
   from = "/*"

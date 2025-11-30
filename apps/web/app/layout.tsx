@@ -18,6 +18,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Kommits.me",
   description: "Commit messages for people who ship.",
+  icons: {
+    icon: "/white.png",
+    apple: "/white.png",
+  },
   openGraph: {
     title: "Kommits.me",
     description: "Commit messages for people who ship.",

@@ -2,7 +2,5 @@
   command = "npm install && npm run build --workspace=@commitlol/engine && npm run build --workspace=web"
   publish = "apps/web/.next"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

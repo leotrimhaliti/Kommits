@@ -2,19 +2,19 @@
 
 import { useEffect, useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { MessageEngine } from '@commitlol/engine';
+import { MessageEngine } from '@kommits/engine';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export default function DailyPage() {
-    const [message, setMessage] = useState('');
+    // Deterministic for the current day, so it's safe to compute during the
+    // initial render instead of setting it from an effect (no hydration risk).
+    const [message] = useState(() => MessageEngine.getDailyMessage());
     const [timeLeft, setTimeLeft] = useState('');
 
     useEffect(() => {
-        setMessage(MessageEngine.getDailyMessage());
-
         const timer = setInterval(() => {
             const now = new Date();
             const tomorrow = new Date(now);

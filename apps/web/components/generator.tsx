@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { toast } from 'sonner';
-import { MessageEngine, Vibe, VIBES } from '@commitlol/engine';
+import { MessageEngine, Vibe, VIBES } from '@kommits/engine';
 import { RefreshCw } from 'lucide-react';
 
 export function Generator() {
@@ -20,6 +20,10 @@ export function Generator() {
     }, [vibe]);
 
     useEffect(() => {
+        // The message is randomized (Math.random) and must be generated
+        // client-side only, or the server-rendered HTML would mismatch what
+        // the client renders on hydration.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         generate();
     }, [generate]);
 
